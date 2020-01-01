@@ -5,7 +5,7 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 
 ## List all games
 **Definition**
-<pre>`GET /games`</pre>
+<pre>GET /games</pre>
 
 **Response**
 - `200 OK` on success.
@@ -26,7 +26,7 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 
 ## List games which have been loaned to others
 **Definition**
-<pre>`GET /games?loaned=true`</pre>
+<pre>GET /games?loaned=true</pre>
 
 **Response**
 - `200 OK` on success.
@@ -42,7 +42,7 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 
 ## Add new game
 **Definition**
-<pre>`POST /games`</pre>
+<pre>POST /games</pre>
 
 **Arguments**
 - `"title":string` the title of the game.
@@ -61,7 +61,7 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 
 ## Get the details of a game
 **Definition**
-<pre>`GET /game/:title_of_the_game`</pre>
+<pre>GET /game/:title_of_the_game</pre>
 
 **Response**
 - `404 Not Found` if the game does not exist.
