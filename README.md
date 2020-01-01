@@ -23,12 +23,10 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
     }
 ]
 ```
+
 ## List games which have been loaned to others
 **Definition**
-<pre>`GET /games`</pre>
-
-**Arguments**
-- `"loaned":boolean` true or false.
+<pre>`GET /games?loaned=true`</pre>
 
 **Response**
 - `404 Not Found` if no such game meets the criteria
@@ -43,9 +41,9 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 ]
 ```
 
-## Add a new game
+## Add new game
 **Definition**
-<pre>`POST /game`</pre>
+<pre>`POST /games`</pre>
 
 **Arguments**
 - `"title":string` the title of the game.
@@ -62,10 +60,25 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 }
 ```
 
+## Get the details of a game
+**Definition**
+<pre>`GET /game/:title_of_the_game`</pre>
+
+**Response**
+- `404 Not Found` if the game does not exist.
+- `200 OK` on success.
+```json
+{
+    "title": "Assassin's Creed Black Flag",
+    "completed": false,
+    "loaned_to": ""
+}
+```
+
 ## Delete a game
 ###### (Umm...why do you want to remove a game from your library?)
 **Definition**
-`DELETE /game/<title_of_the_game>`
+`DELETE /game/:title_of_the_game`
 
  **Response**
  - `404 Not Found` if the game does not exist.
