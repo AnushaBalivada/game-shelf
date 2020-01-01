@@ -29,7 +29,6 @@ Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persiste
 <pre>`GET /games?loaned=true`</pre>
 
 **Response**
-- `404 Not Found` if no such game meets the criteria
 - `200 OK` on success.
 ```json
 [
