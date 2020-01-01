@@ -1,5 +1,5 @@
 # game-shelf
-A simple Python program, to play with shelve and Docker.
+A simple Python program, to play with shelve, Flask and Docker.
 
 Uses [shelve](https://docs.python.org/3/library/shelve.html) for object persistence.
 
