@@ -44,15 +44,8 @@ class GameList(Resource):
         keys = list(shelf.keys())
         loaned = request.args.get('loaned')
 
-        games = []
-        loaned_games = []
-
-        for key in keys:
-            games.append(shelf[key])
-
-        for game in games:
-            if game.loaned_to != "":
-                loaned_games.append(game)
+        games = [shelf[key] for key in keys]
+        loaned_games = [game for game in games if game.loaned_to != ""]
 
         if loaned == "true":
             output = loaned_games
